@@ -36,3 +36,4 @@ if __name__ == '__main__':
     except LookupError:
         showed_frequent_words = 10
     print_most_frequent_words(words_dict, showed_frequent_words)
+
