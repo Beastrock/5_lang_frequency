@@ -16,19 +16,20 @@ def load_data(file_location):
 
 
 def get_most_frequent_words(text):
-    get_list_of_words = re.split('\W*\s\W*', text.lower())
-    words_info_dict = collections.Counter(get_list_of_words)
-    return words_info_dict
+    words_list = re.split('\W*\s\W*', text.lower())
+    words_dict = collections.Counter(words_list)
+    return words_dict
 
 
-def print_most_frequent_words(words_info_dict,showed_frequent_words=10):
+def print_most_frequent_words(words_dict, showed_frequent_words=10):
     print('The most frequent words in this text are:')
-    for word, count in words_info_dict.most_common(showed_frequent_words):
+    for word, count in words_dict.most_common(showed_frequent_words):
         print("{}:  {}".format(count, word))
     return
 
 
 if __name__ == '__main__':
     text = load_data(sys.argv[1])
-    showed_frequent_words=sys.argv[2]
-    print_most_frequent_words(get_most_frequent_words(text))
+    words_dict = get_most_frequent_words(text)
+    showed_frequent_words = sys.argv[2]
+    print_most_frequent_words(words_dict, showed_frequent_words)
