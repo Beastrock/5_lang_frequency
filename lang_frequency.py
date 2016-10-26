@@ -21,7 +21,7 @@ def get_most_frequent_words(text):
     return words_dict
 
 
-def print_most_frequent_words(words_dict, showed_frequent_words=10):
+def print_most_frequent_words(words_dict, showed_frequent_words):
     print('The most frequent words in this text are:')
     for word, count in words_dict.most_common(showed_frequent_words):
         print("{}:  {}".format(count, word))
