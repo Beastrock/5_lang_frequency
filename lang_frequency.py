@@ -26,5 +26,5 @@ def get_most_frequent_words(text):
 
 
 if __name__ == '__main__':
-    file_location = sys.argv[1]
-    get_most_frequent_words(load_data(file_location))
+    text = load_data(sys.argv[1])
+    get_most_frequent_words(text)
