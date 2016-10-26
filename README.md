@@ -1,5 +1,5 @@
 # 5_lang_frequency
-This script gets the txt file and return the statics about the most frequent words in this file.  
+This script gets the txt file and prints statics about the most frequent words in this text.  
 
 ##launch  
 You can launch it using  or filepath or url:  
