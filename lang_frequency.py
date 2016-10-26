@@ -31,5 +31,9 @@ def print_most_frequent_words(words_dict, showed_frequent_words=10):
 if __name__ == '__main__':
     text = load_data(sys.argv[1])
     words_dict = get_most_frequent_words(text)
-    showed_frequent_words = sys.argv[2]
+    try:
+        showed_frequent_words = sys.argv[2]
+    except LookupError:
+        showed_frequent_words = 10
     print_most_frequent_words(words_dict, showed_frequent_words)
+    
