@@ -1,5 +1,5 @@
 # 5_lang_frequency
-This script gets the txt file and prints statics about the most frequent words in this text.  
+This script gets the txt file and prints statistics about the most frequent words in this text.  
 
 ##launching 
 First `pip install -r requirements.txt`  
