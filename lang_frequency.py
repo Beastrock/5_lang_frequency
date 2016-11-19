@@ -2,7 +2,6 @@ import re
 import sys
 import requests
 from validators import url
-from tabulate import tabulate
 from collections import Counter
 
 
@@ -22,8 +21,11 @@ def get_most_frequent_words(text):
 
 
 def print_most_frequent_words(words_dict):
-    print('The most frequent words in this text are:')
-    print(tabulate(words_dict, headers=["words", "count"], tablefmt='orgtbl'))
+    print('The most frequent words in this text are:\n{0:^20s} | {1:^8s}'
+          .format("WORDS", "COUNTS"))
+    for word, count in words_dict:
+        print('{0:^20s} | {1:^8d}'.format(word, count))
+
 
 if __name__ == '__main__':
     filepath = sys.argv[1]
