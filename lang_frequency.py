@@ -1,18 +1,18 @@
-from collections import Counter
 import re
-import requests
 import sys
+import requests
+from validators import url
+from tabulate import tabulate
+from collections import Counter
 
 
 def load_data(file_location):
-    if '://' in file_location:
+    if url(file_location):
         r = requests.get(file_location)
-        text = r.text
-        return text
+        return r.text
     else:
         with open(file_location, 'r', encoding='utf-8') as f:
-            text = f.read()
-            return text
+            return f.read()
 
 
 def get_most_frequent_words(text):
@@ -23,10 +23,7 @@ def get_most_frequent_words(text):
 
 def print_most_frequent_words(words_dict):
     print('The most frequent words in this text are:')
-    for word, count in words_dict:
-        print("{}:  {}".format(count, word))
-    return
-
+    print(tabulate(words_dict, headers=["words", "count"], tablefmt='orgtbl'))
 
 if __name__ == '__main__':
     filepath = sys.argv[1]
